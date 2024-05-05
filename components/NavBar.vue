@@ -30,13 +30,6 @@
                 </div>
             </template>
         </Menubar>
-        <div>
-        
-        <i class="pi pi-check"></i>
-        <i class="pi pi-times"></i>
-        <span class="pi pi-search"></span>
-        <span class="pi pi-user"></span>
-        </div>
     </div>
 </template>
 
@@ -49,15 +42,15 @@ const items = ref([
         icon: 'pi pi-home'
     },
     {
-        label: 'Features',
+        label: 'Favoritos',
         icon: 'pi pi-star'
     },
     {
-        label: 'Projects',
+        label: 'Categorias',
         icon: 'pi pi-search',
         items: [
             {
-                label: 'Core',
+                label: 'Cervezas',
                 icon: 'pi pi-bolt',
                 shortcut: '⌘+S'
             },

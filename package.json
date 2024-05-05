@@ -18,6 +18,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "nuxt-icon": "^0.6.10",
     "nuxt-primevue": "^0.3.1"
   }
 }

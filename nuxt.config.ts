@@ -2,7 +2,8 @@ import * as path from 'path';
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxtjs/tailwindcss', "nuxt-primevue"],
+    modules: ['@nuxtjs/tailwindcss', "nuxt-primevue", "nuxt-icon"],
+    css: ["primeicons/primeicons.css"],
     primevue: {
         options: { unstyled: true },
         importPT: { as: 'Lara', from: '/presets/lara' },
