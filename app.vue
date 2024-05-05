@@ -1,12 +1,14 @@
 <template>
   <div>
-    <Welcome/>
+  <NavBar/>
+  <!-- <Welcome /> -->
+
   </div>
 </template>
 
 <script setup lang="ts">
 </script>
 
-<style scoped>
-
+<style>
+@import url("/assets/css/base.css");
 </style>

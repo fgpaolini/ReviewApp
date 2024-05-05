@@ -1,6 +1,7 @@
 import * as path from 'path';
 
 export default defineNuxtConfig({
+    devtools: { enabled: true },
     modules: ['@nuxtjs/tailwindcss', "nuxt-primevue"],
     primevue: {
         options: { unstyled: true },
