@@ -14,13 +14,15 @@
                 </svg>
             </template>
             <template #item="{ item, props, hasSubmenu, root }">
-                <a v-ripple class="flex items-center" v-bind="props.action">
-                    <span :class="item.icon" />
+                <NuxtLink :to="item.to" v-ripple class="flex items-center" v-bind="props.action">
+                    
+                    <Icon v-if="item.CustomIcon" :name="item.icon ?? ''"/>
+                    <span :class="item.icon" v-else/>
                     <span class="ml-2">{{ item.label }}</span>
                     <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
                     <span v-if="item.shortcut" class="ml-auto border border-surface-200 dark:border-surface-500 rounded-md bg-surface-100 dark:bg-surface-800 text-xs p-1">{{ item.shortcut }}</span>
                     <i v-if="hasSubmenu" :class="['pi pi-angle-down text-primary-500 dark:text-primary-400-500 dark:text-primary-400', { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }]"></i>
-                </a>
+                </NuxtLink>
             </template>
             <template #end>
                 <div class="flex items-center gap-2">
@@ -32,17 +34,24 @@
     </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
+<script setup lang="ts">
+import type { MenuItem } from 'primevue/menuitem';
+import type { CustomMenuItem } from '~/types';
 
-const items = ref([
+
+
+
+const items = ref<CustomMenuItem[]>([
     {
         label: 'Home',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        to: '/'
     },
     {
-        label: 'Favoritos',
-        icon: 'pi pi-star'
+        label: 'Productos',
+        icon: 'mdi:package-variant',
+        CustomIcon: true,
+        to: 'products'
     },
     {
         label: 'Categorias',
@@ -51,7 +60,8 @@ const items = ref([
             {
                 label: 'Cervezas',
                 icon: 'pi pi-bolt',
-                shortcut: '⌘+S'
+                shortcut: '⌘+S',
+                to: 'cervezas'
             },
             {
                 label: 'Blocks',
@@ -83,6 +93,10 @@ const items = ref([
                 ]
             }
         ]
+    },
+    {
+        label: 'Favoritos',
+        icon: 'pi pi-star'
     },
     {
         label: 'Contact',

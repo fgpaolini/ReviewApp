@@ -3,8 +3,8 @@
         <div>
             <NavBar/>
         </div>
-        <div>
-            <Hero/>
+        <div class="h-full">
+            <NuxtPage class="h-full"/>
         </div>
     </div>
 </template>
