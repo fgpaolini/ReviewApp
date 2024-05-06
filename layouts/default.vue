@@ -1,6 +1,10 @@
 <template>
     <div>
-    <NavBar/>
-        <slot />
+        <div>
+            <NavBar/>
+        </div>
+        <div>
+            <Hero/>
+        </div>
     </div>
 </template>
